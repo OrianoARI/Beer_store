@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+}
+
+/* =================================================================header*/
+
+header {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header button {
+    height: 40px;
+    margin: 20px;
+    width: 200px;
+    border-radius: 60px;
+}
+
+header a {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-decoration: none;
+}
+
+.login {
+    background-color: black;
+}
+
+.login a {
+    color: rgb(232, 142, 54);
+}
+
+.subscribe {
+    background-color: rgb(232, 142, 54);
+}
+
+.subscribe a {
+    color: black;
+
+}
+
+h1 {
+    padding: 5px;
+    line-height: 10px;
+    margin: 3%;
+}
+
+#logo {
+    width: 60%;
+}
+
+/*================================================================*/
+/* =================================================================modal*/
+dialog {
+    z-index: 2;
+    background-color: black;
+    color: rgb(232, 142, 54);
+    border-radius: 20px;
+}
+
+.dial-add form {
+    display: flex;
+    flex-direction: column;
+}
+
+.dial-add label {
+    margin: 5px;
+}
+
+.dial-add h3 {
+    margin: 0px 0px 10px 0px;
+    text-align: center;
+}
+
+.dial-add button {
+    text-align: center;
+    margin: 5px;
+    width: 100px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(214, 96, 0, 0.5);
+    backdrop-filter: blur(3px);
+    z-index: 1;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.hidden {
+    display: none;
+}

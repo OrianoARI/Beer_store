@@ -24,7 +24,8 @@ function burgerMenuClosed() {
     sideMenu.style.left = "0px";
     burger.style.transition = "600ms";
     burger.style.left = "0px";
-    burger.style.borderradius = "0 20px 20px 0";
+    burger.style.borderRadius = "0 10px 10px 0";
+    sideMenu.style.backgroundColor = "#e88e36";
 }
 
 function burgerMenuOpen() {
@@ -44,6 +45,8 @@ function burgerMenuOpen() {
     sideMenu.style.left = "-100px";
     burger.style.transition = "600ms";
     burger.style.left = "-100px";
+    sideMenu.style.backgroundColor = "black";
+    burger.style.borderRadius = "10px 10px 10px 10px";
 };
 
 

@@ -8,8 +8,8 @@ session_start()
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/css/store_style.css">
-    <title>Store</title>
+    <link rel="stylesheet" href="../assets/css/home_style.css">
+    <title>Home</title>
 </head>
 
 <body>
@@ -24,12 +24,11 @@ session_start()
             <div class="side-menu">
                 <h2>Menu</h2>
                 <ul>
-                    <li>dddd</li>
-                    <li>dddd</li>
-                    <li>dddd</li>
-                    <li>dddd</li>
-                    <li>dddd</li>
-                    <li>dddd</li>
+                    <li>Home</li>
+                    <li>Actualités</li>
+                    <li>Carte</li>
+                    <li>Nous contacter</li>
+                    <li>Galeries</li>
                 </ul>
             </div>
             <div id="menuBurger" class="closed">
@@ -40,9 +39,9 @@ session_start()
         </div>
     </main>
     <footer>
-
+<a href="./dashboard.php">Administration</a>
     </footer>
-    <script src="../assets/js/store.js"></script>
+    <script src="../assets/js/home.js"></script>
 </body>
 
 </html>

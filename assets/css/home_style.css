@@ -106,46 +106,22 @@ h1 {
 
 .side-menu {
     position: relative;
-    background-color: rgb(232, 142, 54);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color:rgb(232, 142, 54);
     border-radius: 0 0 20px 0;
     width: 100px;
     height: 200px;
     left: -100px;
 }
 
-.opened {
-    background-color: #e88e36;
-    transition: 600ms;
-    left: 0px;
-    border-radius: "0 20px 20px 0";
+.side-menu ul {
+    padding: 0;
 }
 
-.opened #burgerOne {
-    background-color: black;
-    transition: 600ms;
-    transform: rotate(45deg);
+.side-menu li {
+    list-style-type: none;
 }
-
-.opened #burgerTwo {
-    background-color: black;
-    transition: 600ms;
-    transform: rotate(135deg);
-    position: absolute;
-}
-
-.opened #burgerThree {
-    background-color: black;
-    transition: 600ms;
-    transform: rotate(135deg);
-    position: absolute;
-    width: 0px;
-}
-
-.opened .side-menu {
-    transition: 600ms;
-    left: 0px;
-}
-
-
 
 /*================================================================*/

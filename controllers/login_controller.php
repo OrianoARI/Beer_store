@@ -9,7 +9,7 @@ if (!empty($_POST["email"]) && !empty($_POST["password"])) {//on vérifie que le
     if (!empty($user_filter)) { //si $user_filter n'est pas vide (signifie que le mail saisi par l'utilisateur existe)
         if ($user_filter[0]->id != "1") { // si id = 1 c'est un id admin
             if (password_verify($_POST['password'], $user_filter[0]->password)) { //password_verify compare le password sais par celui qui est stocké dans le .json et qui est hashé
-                header('Location: ../pages/store.php');//rdirection vers la page souhaité
+                header('Location: ../pages/home.php');//rdirection vers la page souhaité
             } else {
                 $_SESSION['error_password'] = "Mot de passe incorrect";//message d'erreur mot de passe
                 header('Location:../pages/login.php');
@@ -19,7 +19,7 @@ if (!empty($_POST["email"]) && !empty($_POST["password"])) {//on vérifie que le
         }
         if ($user_filter[0]->id == "1") {
             if (password_verify($_POST['password'], $user_filter[0]->password)) {
-                header('Location:../pages/gestion.php');
+                header('Location:../pages/dashboard.php');
             } else {
                 $_SESSION['error_password'] = "Mot de passe incorrect";
                 header('Location:../pages/login.php');
