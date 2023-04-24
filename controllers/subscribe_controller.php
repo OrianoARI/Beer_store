@@ -8,15 +8,10 @@ $first_name = $_POST["firstName"];
 $birth_date = $_POST["birthDate"];
 $email = $_POST["email"];
 $password = $_POST["password"];
-$way = $_POST["way"];
-$way_name = $_POST["wayName"];
-$post_code = $_POST["postCode"];
-$city = $_POST["city"];
-
 
 
 if ($diff->format('%y') >= 0) { //Attention modifier l'âge
-    if (!empty($name) && !empty($_POST["firstName"]) && !empty($_POST["birthDate"]) && !empty($_POST["email"]) && !empty($_POST["password"]) && $way != 0 && !empty($_POST["wayName"]) && !empty($_POST["postCode"]) && !empty($_POST["city"])) {
+    if (!empty($name) && !empty($first_name) && !empty($birth_date) && !empty($_POST["email"]) && !empty($password)) {
         $users_array = json_decode(file_get_contents('../bdd/users.json'));
         $user = $_POST;
         $user_pass = $_POST["password"];

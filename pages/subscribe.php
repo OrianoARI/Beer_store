@@ -21,15 +21,17 @@ session_start()
             <h3>Données personnelles</h3>
             <div class="form-one">
                 <label for="name">Nom :</label>
-                <input type="text" name="name" id="name">
+                <input type="text" name="name" id="name" value="<?php if (isset($_POST["name"])) {
+                                                                    echo $_POST["name"];
+                                                                } ?>">
                 <label for="firstName">Prénom :</label>
                 <input type="text" name="firstName" id="firstName">
                 <label for="birthDate">Date de naissance :</label><!--âge légal-->
                 <input type="date" name="birthDate" id="birthDate">
                 <?php
                 if (!empty($_SESSION['error_age'])) {
-                    echo '<p>' . $_SESSION['error_age'] . '</p>';
-                    unset($_SESSION['error_age']);
+                    echo '<p>' . $_SESSION['error_age'] . '</p>'; //message d'erreur en cas d'âge<18ans => récupère dans le controller
+                    unset($_SESSION['error_age']); //désactive le message en cas de rechargement de la page
                 }
                 ?>
                 <label for="email">Email :</label>
@@ -54,39 +56,14 @@ session_start()
                     <option value="other">Autre</option>
                 </select>
             </div>
-
-            <h3>Adresse</h3>
-            <div class="form-two">
-                <label for="nbr">N° :</label>
-                <input type="text" name="nbr" id="nbr">
-                <label for="way">Type de voie :</label>
-                <select name="way" id="way" value="">
-                    <option value="0">Choisissez un type de voie</option>
-                    <option value="street">Rue</option>
-                    <option value="avenue">Avenue</option>
-                    <option value="boulvard">Boulevard</option>
-                    <option value="path">Chemin</option>
-                    <option value="allay">Allée</option>
-                    <option value="road">Route</option>
-                    <option value="other">Autre</option>
-                </select>
-                <label for="wayName">Voie :</label>
-                <input type="text" name="wayName" id="wayName">
-                <label for="complement">Complément d'adresse :</label>
-                <input type="text" name="complement" id="complement">
-                <label for="postCode">Code postal :</label>
-                <input type="text" name="postCode" id="postCode">
-                <label for="city">Ville :</label>
-                <input type="text" name="city" id="city">
-            </div>
             <button type="submit">Enregistrer</button>
             <button type="reset">Effacer</button>
             <?php
-                if (!empty($_SESSION['error_empty_fields'])) {
-                    echo '<p>' . $_SESSION['error_empty_fields'] . '</p>';
-                    unset($_SESSION['error_empty_fields']);
-                }
-                ?>            
+            if (!empty($_SESSION['error_empty_fields'])) {
+                echo '<p>' . $_SESSION['error_empty_fields'] . '</p>';
+                unset($_SESSION['error_empty_fields']);
+            }
+            ?>
         </form>
 
     </main>
