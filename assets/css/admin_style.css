@@ -1,24 +1,70 @@
-body {
-    margin: 0;
+/*================================================================fonts*/
+@font-face {
+    font-family: cafe;
+    src: url("../fonts/AARDC___.TTF");
 }
+
+@font-face {
+    font-family: helv;
+    src: url("../fonts/Helv\ Children.otf");
+}
+
+@font-face {
+    font-family: sport;
+    src: url("../fonts/Sports\ World-Regular.ttf");
+}
+
+@font-face {
+    font-family: varsity;
+    src: url("../fonts/VarsityTeam-Bold.otf");
+}
+
+@font-face {
+    font-family: capture;
+    src: url("../fonts/Capture\ it.ttf");
+}
+
+@font-face {
+    font-family: hollywood;
+    src: url("../fonts/HollywoodHills.ttf");
+}
+
+@font-face {
+    font-family: resegrg;
+    src: url("../fonts/RESEGRG_.TTF");
+}
+
+@font-face {
+    font-family: craie;
+    src: url("../fonts/Craie.ttf");
+}
+
+/*================================================================*/
+body,
+main {
+    margin: 0;
+    overflow-x: hidden;
+}
+
+main {}
 
 /* =================================================================header*/
 
-header {
+.header {
     background-color: rgb(255, 255, 255);
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-header button {
+.header button {
     height: 40px;
     margin: 20px;
     width: 200px;
     border-radius: 60px;
 }
 
-header a {
+.header a {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     text-decoration: none;
 }
@@ -43,7 +89,13 @@ header a {
 h1 {
     padding: 5px;
     line-height: 10px;
-    margin: 3%;
+    margin: 0;
+}
+
+header h2 {
+    font-family: hollywood;
+    color: #2c3e50;
+    text-align: center;
 }
 
 #logo {
@@ -51,33 +103,227 @@ h1 {
 }
 
 /*================================================================*/
+/* =================================================================menu*/
+.menu-container {
+    display: flex;
+    position: relative;
+    left: 0;
+    align-items: start;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#menuBurger {
+    position: absolute;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 0 10px 10px 0;
+}
+
+.burger {
+    margin: 3px;
+    width: 35px;
+    height: 5px;
+    border-radius: 20px;
+    background-color: rgb(232, 142, 54);
+}
+
+
+.tburger {
+    margin: 3px;
+    width: 35px;
+    height: 5px;
+    background-color: rgb(232, 142, 54);
+}
+
+#tburgerOne {
+    transform: rotate(45deg);
+    position: absolute;
+
+}
+
+#tburgerTwo {
+    transform: rotate(45deg);
+    position: absolute;
+
+}
+
+#tburgerThree {
+    transform: rotate(135deg);
+    position: absolute;
+}
+
+.side-menu {
+    position: relative;
+    margin: 0;
+    height: 50px;
+    display: flex;
+    text-align: center;
+    background-color: transparent;
+    left: -270px;
+}
+
+.side-menu ul {
+    padding: 5px;
+    display: flex;
+    margin: 5px;
+}
+
+.side-menu li {
+    list-style-type: none;
+    line-height: 10px;
+    margin: 10px;
+}
+
+/*================================================================*/
 /* =================================================================modal*/
 dialog {
     z-index: 2;
-    background-color: black;
+    background-image: url("../img/ardoise-bgnd.png");
     color: rgb(232, 142, 54);
     border-radius: 20px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 18px;
 }
 
-.dial-add form {
+.dial-add form,
+.dial-update form {
     display: flex;
     flex-direction: column;
 }
 
-.dial-add label {
+.dial-add label,
+.dial-update label {
     margin: 5px;
 }
 
-.dial-add h3 {
-    margin: 0px 0px 10px 0px;
-    text-align: center;
+.dial-add input,
+.dial-update input {
+    background-color: var(--darkgray);
+    color: #f39c12;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
 }
 
-.dial-add button {
+
+:root {
+    --background-gradient: linear-gradient(30deg, #f39c12 30%, #f1c40f);
+    --gray: #34495e;
+    --darkgray: #2c3e50;
+}
+
+.dial-add select,
+.dial-update select {
+    /* Reset Select */
+    appearance: none;
+    outline: 0;
+    border: 0;
+    box-shadow: none;
+    /* Personalize */
+    flex: 1;
+    padding: 0 1em;
+    color: #f39c12;
+    background-color: var(--darkgray);
+    background-image: none;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.dial-add option,
+.dial-update option {
+    color: #f39c12;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Remove IE arrow */
+.dial-add select::-ms-expand,
+.dial-update select::-ms-expand {
+    display: none;
+}
+
+/* Custom Select wrapper */
+.select {
+    position: relative;
+    display: flex;
+    width: 18em;
+    height: 2em;
+    border-radius: .25em;
+    overflow: hidden;
+}
+
+/* Arrow */
+.select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.5em;
+    background-color: #34495e;
+    transition: .25s all ease;
+    pointer-events: none;
+}
+
+/* Transition */
+.select:hover::after {
+    color: #f39c12;
+}
+
+/* Other styles
+  body {
+    color: #fff;
+    background: var(--background-gradient);
+  }
+*/
+
+#img {
+    padding-top: 2px;
+    line-height: .5em;
+    font-size: 18px;
+}
+
+.input {
+    position: relative;
+    display: flex;
+    width: 18em;
+    height: 2em;
+    border-radius: .25em;
+    overflow: hidden;
+}
+
+.dial-add h3,
+.dial-update h3 {
+    margin: 0px 0px 10px 0px;
+    text-align: center;
+    font-weight: normal;
+}
+
+.dial-add button,
+.dial-update button {
     text-align: center;
     margin: 5px;
     width: 100px;
+    background-color: var(--darkgray);
+    height: 2em;
+    border-radius: .25em;
+    color: #f39c12;
 }
+
+#img::file-selector-button {
+    text-align: center;
+    width: auto;
+    background-color: var(--darkgray);
+    height: 2em;
+    border-radius: .25em;
+    color: #f39c12;
+}
+
+
 
 .overlay {
     position: fixed;
@@ -87,7 +333,7 @@ dialog {
     right: 0;
     width: 100%;
     height: 100%;
-    background: rgba(214, 96, 0, 0.5);
+    background-color:  #34495ee1;
     backdrop-filter: blur(3px);
     z-index: 1;
 }
@@ -101,3 +347,68 @@ dialog {
 .hidden {
     display: none;
 }
+
+.modal-hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+    background-color: #f39c12;
+    border: 2px solid var(--gray);
+    border-radius: 20px;
+    padding:10px; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 3;
+    font-family: hollywood;
+    color: #2c3e50;
+}
+
+.visible h2{
+    font-family: hollywood;
+    color: #2c3e50;
+    text-align: center;
+}
+
+/*================================================================*/
+/*================================================================product*/
+
+.img {
+    height: 50px;
+    text-align: center;
+}
+
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.product {
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+.img {
+    margin: auto;
+
+}
+
+.product p {
+    margin: 5px;
+}
+
+.product-btn {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+
+/*================================================================*/
+/*================================================================
