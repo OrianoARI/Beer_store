@@ -35,10 +35,8 @@ session_start();
                     return $product["id"] == $_GET['productId']; //on récupère l'utilisateur par son mot de passe (seulemnt si le mail saisi dans le champs du formulaire existe dans $users_array sinon $user_filter sera vide)
                 });
                 $product_filter = array_values($product_filter);
-                print_r($product_filter[0]);
                 $productImg = "../assets/uploads/" . $product_filter[0]['img'];
-                echo $productImg;
-                echo "<img style = 'width : 200px' src='../assets/uploads/" . $product_filter[0]['img'] . "'/> //mettre le style dans fichier CSS
+                echo "<img style = 'width : 200px' src='../assets/uploads/" . $product_filter[0]['img'] . "'/>
 
                 <input class='input' type='file' name='img' id='img'>
                 <label for='type'>Type de produit</label>

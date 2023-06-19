@@ -2,7 +2,6 @@
 session_start();
 
 $products_array = json_decode(file_get_contents('../bdd/products.json'));
-//print_r($products_array);
 
 foreach ($products_array as $key => $value) {
    //echo $products_array[$key]->id;

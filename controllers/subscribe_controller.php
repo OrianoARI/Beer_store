@@ -20,7 +20,6 @@ if ($diff->format('%y') >= 0) { //Attention modifier l'âge
         $user["id"] = uniqid();
         array_push($users_array, $user);
         $users_array = json_encode($users_array);
-        print_r($users_array);
         file_put_contents('../bdd/users.json', $users_array);
         header('location: ../pages/login.php');
     } else {

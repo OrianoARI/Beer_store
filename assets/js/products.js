@@ -7,6 +7,8 @@ let body = document.querySelector('body');
 let closeBtn = document.querySelector('.close-btn');
 
 
+
+
 //============================================================================ modal add product function
 
 add.addEventListener('click', () => {
